@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="50dp">
+    <View
+        android:layout_width="2dp"
+        android:layout_height="20dp"
+        android:background="#1ca7e3"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:visibility="invisible"
+        android:id="@+id/lineview"
+        />
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="最近更新"
+        android:id="@+id/head_tv"
+        android:drawableBottom="@drawable/ic_pay_arrow_down"
+        android:drawablePadding="4dp"
+        android:textSize="14sp"
+        android:textColor="#585858"
+        android:layout_centerInParent="true"
+    />
+</RelativeLayout>

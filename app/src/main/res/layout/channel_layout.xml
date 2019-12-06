@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/pullRefresh"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:background="#ffffff"
+        android:id="@+id/content_main"
+        android:fitsSystemWindows="true"
+        android:layout_height="match_parent">
+
+
+            <android.support.design.widget.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:background="#fff"
+                android:layout_height="wrap_content"
+                android:gravity="bottom"
+                app:contentScrim="@android:color/transparent"
+                app:elevation="0dp">
+
+                <android.support.design.widget.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:contentScrim="@android:color/transparent"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed|enterAlwaysCollapsed">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="320dp"
+                        app:layout_collapseMode="parallax"
+                        android:clipChildren="false">
+
+                        <ImageView
+                            android:id="@+id/img_bg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop" />
+
+                        <com.leochuan.AutoPlayRecyclerView
+                            android:scrollbars="none"
+                            android:id="@+id/recycler"
+                            android:layout_centerHorizontal="true"
+                            android:layout_alignParentTop="true"
+                            android:background="@android:color/transparent"
+                            android:layout_width="match_parent"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="30dp"
+                            app:direction="right"
+                            app:timeInterval="3000"
+                            android:layout_height="200dp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:layout_alignParentBottom="true"
+                            android:background="#fff"
+                            android:gravity="bottom|center_horizontal"
+                            android:orientation="horizontal"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            android:paddingBottom="8dp">
+
+                            <TextView
+                                android:id="@+id/catfrag"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/cat"
+                                android:drawablePadding="6dp"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:visibility="gone"
+                                android:text="在线影院"
+                                android:textColor="#222222"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/douban"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/favor"
+                                android:drawablePadding="6dp"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:text="我的收藏"
+                                android:textColor="#222222"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/reclist"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/helper"
+                                android:drawablePadding="6dp"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:text="关于·反馈"
+                                android:textColor="#222222"
+                                android:visibility="gone"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/bangdan"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/dlan_cast"
+                                android:drawablePadding="6dp"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:text="投屏助手"
+                                android:textColor="#222222"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/downCenter"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:drawableTop="@drawable/down_center"
+                                android:drawablePadding="6dp"
+                                android:focusable="true"
+                                android:gravity="center"
+                                android:text="下载中心"
+                                android:textColor="#222222"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </android.support.design.widget.CollapsingToolbarLayout>
+                <com.antiless.support.widget.TabLayout
+                    android:id="@+id/home_tabs"
+                    android:layout_width="330dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:background="@android:color/transparent"
+                    app:tabIndicatorHeight="3dp"
+                    app:indicatorStartColor="#303030"
+                    app:indicatorEndColor="#292929"
+                    app:indicatorMarginStart="56dp"
+                    app:indicatorMarginEnd="56dp"
+                    app:tabTextColor="#B2171717"/>
+            </android.support.design.widget.AppBarLayout>
+            <android.support.v4.view.ViewPager
+                android:id="@+id/homepager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
+    </android.support.design.widget.CoordinatorLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

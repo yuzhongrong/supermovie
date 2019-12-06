@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginTop="50dp"
+    android:layout_marginBottom="50dp"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:id="@+id/head_banner"
+        android:layout_height="158dp"
+        android:background="@drawable/update_head_icon"
+        />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#fff"
+        android:paddingLeft="20dp"
+        android:id="@+id/center"
+        android:paddingRight="20dp"
+        android:layout_below="@+id/head_banner"
+        android:layout_width="match_parent"
+        android:layout_height="200dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/update_title"
+            android:layout_centerInParent="true"
+            android:textSize="18sp"
+            android:textColor="#1b1b1b"
+            android:text="发现新版本：1.0.2"
+            />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/update_content"
+                android:lineSpacingExtra="10dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/update_title"
+                android:text="这个更新\r\n这个更新内容\r\\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n这个更新内容\r\n"
+                />
+
+        </ScrollView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/center"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:background="@color/white"
+        android:id="@+id/bt_layout"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_40"
+            android:layout_height="40dp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:textSize="@dimen/dp_14"
+            android:text="立即更新"
+            android:background="@drawable/update_bt_shape"
+            android:id="@+id/bt_confirm" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/dp_40"
+            android:layout_marginRight="@dimen/dp_40"
+            android:layout_height="40dp"
+            android:textColor="#FF6F00"
+            android:gravity="center"
+            android:textSize="@dimen/dp_18"
+            android:visibility="gone"
+            android:text="正在更新："
+            android:id="@+id/bt_loading" />
+
+        <ProgressBar
+            android:id="@+id/update_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:visibility="gone"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_height="4dp"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:max="100"
+            android:progressDrawable="@drawable/update_dialog_progress" />
+    </LinearLayout>
+    <ImageView
+        android:background="@drawable/bottom_shap"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/bt_layout"
+        android:layout_height="20dp"/>
+</RelativeLayout>

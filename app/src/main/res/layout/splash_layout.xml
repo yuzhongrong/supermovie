@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/root"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/splash_poster"
+        android:scaleType="centerCrop"
+        android:background="@drawable/splash3"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="热门电影，美剧，每日更新"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="66dp"
+        android:textSize="14sp"
+        android:textColor="#ffffff"
+        />
+    <ImageView
+        android:layout_width="60dp"
+        android:id="@+id/icon_img"
+        android:layout_height="60dp"
+        android:layout_marginRight="6dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="106dp"
+        android:layout_marginBottom="90dp"
+        android:background="@mipmap/icon"
+        android:layout_marginTop="190dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SkyTube"
+        android:textColor="#ffffff"
+        android:id="@+id/icon_title"
+        android:textSize="24sp"
+        android:layout_toRightOf="@+id/icon_img"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="90dp"
+        />
+</RelativeLayout>

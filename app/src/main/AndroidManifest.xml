@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="dev.baofeng.com.supermovie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BATTERY_STATS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icon"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            />
+        <activity android:name=".view.SearchActivity" />
+        <activity android:name=".view.AboutUsActivity" />
+        <!-- 注册service -->
+
+        <activity android:name=".view.DoubanActivity" />
+        <activity
+            android:name=".view.MovieDetailActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            />
+        <activity
+            android:name=".SplashActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".view.HistoryActivity" />
+
+        <receiver android:name=".receiver.NetBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".receiver.LocalDataReceiver">
+            <intent-filter>
+                <action android:name="com.movie.history" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".PreActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTask"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <data
+                    android:host="zhost"
+                    android:pathPrefix="/bt/open"
+                    android:scheme="zmovie" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="growing.6858aa81da64ed76" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.FavorActivity" />
+        <activity android:name=".view.SubjectListActivity" />
+        <activity android:name=".view.PayMeActivity" />
+
+        <service android:name=".services.DownLoadService" />
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/new_app_file_paths" />
+        </provider>
+
+        <!-- 微信分享注册 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="tencent_qq_appid"
+            android:value="@string/tencent_qq_appid" />
+        <meta-data
+            android:name="weixin_key"
+            android:value="@string/weixin_key" />
+
+        <!-- QQ SDK 需要註冊Activity -->
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent222222" />
+                <!-- 100380359 100381104 222222 -->
+            </intent-filter>
+        </activity>
+        <!-- QQ SDK 需要註冊 Activity -->
+
+        <activity
+            android:name=".view.OnLineMovieActivity"
+            android:label="@string/title_activity_on_line_movie"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".view.online.OnlineSearchActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".view.online.detail.OnlineDetailPageActivity"
+            android:theme="@style/AppTheme"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:label="@string/title_activity_online_detail_page" />
+        <activity
+            android:name=".view.online.OnlineFilmActivity"
+            android:label="@string/title_activity_online_film"
+            android:theme="@style/AppTheme" />
+
+
+        <activity android:name="com.huangyong.playerlib.QsyPlayerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+
+            />
+        <!--qq浏览器-->
+        <activity
+            android:name="com.tencent.smtt.sdk.VideoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:launchMode="singleTask"
+            android:alwaysRetainTaskState="true">
+            <intent-filter>
+                <action android:name="com.tencent.smtt.tbs.video.PLAY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

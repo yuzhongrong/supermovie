@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toobar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="20dp"
+        android:gravity="bottom"
+        app:paddingStart="0dp">
+
+        <include
+            android:id="@+id/search_bar"
+            layout="@layout/searchbar" />
+    </android.support.v7.widget.Toolbar>
+
+    <com.antiless.support.widget.TabLayout
+        android:id="@+id/tab_title"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:background="@android:color/transparent"
+        app:tabIndicatorHeight="2dp"
+        app:indicatorStartColor="#2b2b2b"
+        app:indicatorEndColor="#383838"
+        app:indicatorMarginStart="18dp"
+        app:indicatorMarginEnd="18dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/CustomTablayoutTextAppearance"
+        app:tabTextColor="#82090909" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:id="@+id/tabline"
+        android:background="#d7dedede"
+        />
+    <android.support.v4.view.ViewPager
+        android:id="@+id/btvp"
+        android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/tabline"
+        android:layout_height="wrap_content"/>
+</LinearLayout>
